@@ -3,6 +3,14 @@
   hosts: all
   become: true
   tasks:
+    - name: Package installation
+      dnf:
+        name:
+          - sysstat
+          - httpd
+          - mariadb-server
+        state: latest
+      
     - name: Install security updates for the kernel
       ansible.builtin.dnf:
         name: 'kernel'
