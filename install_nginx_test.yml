@@ -1,6 +1,6 @@
 ---
 - name: demotest
-  hosts: node1
+  hosts: all
   become: true
 
   tasks:
