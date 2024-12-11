@@ -1,21 +1,8 @@
 ---
-- name: Basic System Setup
+- name: Create user
   hosts: all
   become: true
   tasks:
-    - name: Package installation
-      dnf:
-        name:
-          - sysstat
-          - httpd
-          - mariadb-server
-        state: latest
-      
-    - name: Install security updates for the kernel
-      ansible.builtin.dnf:
-        name: 'kernel'
-        state: latest
-        security: true
 
     - name: Create a new user
       ansible.builtin.user:
