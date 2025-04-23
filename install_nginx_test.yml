@@ -4,6 +4,12 @@
   become: true
 
   tasks:
+
+  - name: install package phyton
+    ansible.builtin.dnf:
+      name: phyton3-dnf
+      state: latest
+      
   - name: install nginx
     yum:
       name: nginx
