@@ -1,6 +1,6 @@
 ---
 - name: Create user
-  hosts: node1
+  hosts: localhost
   become: true
   tasks:
 
