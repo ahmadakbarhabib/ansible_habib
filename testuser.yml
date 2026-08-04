@@ -1,0 +1,10 @@
+---
+- name: Tambah User
+  hosts: all
+  become: yes
+  tasks:
+    - name: Buat user baru
+      ansible.builtin.user:
+        name: johndoe
+        shell: /bin/bash
+        state: present
