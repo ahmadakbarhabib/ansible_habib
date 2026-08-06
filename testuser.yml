@@ -1,7 +1,7 @@
 ---
 - name: Tambah User
   hosts: all
-  become: yes
+  become: true
   tasks:
     - name: Buat user baru
       ansible.builtin.user:
@@ -12,6 +12,6 @@
     - name: Change user password in /etc/shadow
       ansible.builtin.user:
         name: "johndoe"
-        password: "P@ssw0rd"
+        password: "{{ 'P@ssw0rd' | password_hash('sha512') }}"
         update_password: always
       no_log: true
