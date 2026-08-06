@@ -8,3 +8,10 @@
         name: johndoe
         shell: /bin/bash
         state: present
+
+    - name: Change user password in /etc/shadow
+      ansible.builtin.user:
+        name: "johndoe"
+        password: "P@ssw0rd"
+        update_password: always
+      no_log: true
